@@ -6,8 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using ZenithWebSite.Models;
-using ZenithWebSite;
-using ZenithDataLib.Models;
+using ZenithDataLib;
 
 namespace ZenithWebSite
 {

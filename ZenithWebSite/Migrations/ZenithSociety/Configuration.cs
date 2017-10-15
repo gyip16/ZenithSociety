@@ -4,10 +4,9 @@ namespace ZenithWebSite.Migrations.ZenithSociety
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using ZenithDataLib.Models;
     using ZenithWebSite.Data;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ZenithDataLib.ApplicationDbContext>
     {
         public Configuration()
         {
@@ -15,7 +14,7 @@ namespace ZenithWebSite.Migrations.ZenithSociety
             MigrationsDirectory = @"Migrations\ZenithSociety";
         }
 
-        protected override void Seed(ZenithDataLib.Models.ApplicationDbContext context)
+        protected override void Seed(ZenithDataLib.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -29,7 +28,6 @@ namespace ZenithWebSite.Migrations.ZenithSociety
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
             context.ActivityCategories.AddOrUpdate(
                 a => a.ActivityCategoryId, DummyData.getActivityCategories().ToArray());
             context.SaveChanges();
