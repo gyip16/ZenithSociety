@@ -192,9 +192,19 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Data\DummyData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ZenithSociety\201710142353118_InitialCreate.cs" />
+    <Compile Include="Migrations\ZenithSociety\201710142353118_InitialCreate.Designer.cs">
+      <DependentUpon>201710142353118_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ZenithSociety\201710150011334_Retry DummyData.cs" />
+    <Compile Include="Migrations\ZenithSociety\201710150011334_Retry DummyData.Designer.cs">
+      <DependentUpon>201710150011334_Retry DummyData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ZenithSociety\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -203,6 +213,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Doc\Migration.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -279,6 +290,14 @@
       <Project>{a9592b22-850c-42c8-9adf-74f0c7fd8317}</Project>
       <Name>ZenithDataLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\ZenithSociety\201710142353118_InitialCreate.resx">
+      <DependentUpon>201710142353118_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ZenithSociety\201710150011334_Retry DummyData.resx">
+      <DependentUpon>201710150011334_Retry DummyData.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
