@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0BB30525-238C-4BD7-8AB1-4889DFB981B5}</ProjectGuid>
+    <ProjectGuid>{3510039C-CFD1-4331-84F6-7472BF1C8BD0}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -196,13 +196,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ZenithSociety\201710142353118_InitialCreate.cs" />
-    <Compile Include="Migrations\ZenithSociety\201710142353118_InitialCreate.Designer.cs">
-      <DependentUpon>201710142353118_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ZenithSociety\201710150011334_Retry DummyData.cs" />
-    <Compile Include="Migrations\ZenithSociety\201710150011334_Retry DummyData.Designer.cs">
-      <DependentUpon>201710150011334_Retry DummyData.cs</DependentUpon>
+    <Compile Include="Migrations\ZenithSociety\201710150611208_InitialCreate.cs" />
+    <Compile Include="Migrations\ZenithSociety\201710150611208_InitialCreate.Designer.cs">
+      <DependentUpon>201710150611208_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ZenithSociety\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -287,16 +283,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ZenithDataLib\ZenithDataLib.csproj">
-      <Project>{a9592b22-850c-42c8-9adf-74f0c7fd8317}</Project>
+      <Project>{7a312750-c7da-4656-a819-8c4617d8e8a5}</Project>
       <Name>ZenithDataLib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\ZenithSociety\201710142353118_InitialCreate.resx">
-      <DependentUpon>201710142353118_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ZenithSociety\201710150011334_Retry DummyData.resx">
-      <DependentUpon>201710150011334_Retry DummyData.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ZenithSociety\201710150611208_InitialCreate.resx">
+      <DependentUpon>201710150611208_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -315,9 +308,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52006</DevelopmentServerPort>
+          <DevelopmentServerPort>51641</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52006/</IISUrl>
+          <IISUrl>http://localhost:51641/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZenithDataLib.Models
+namespace ZenithDataLib
 {
     public class Event
     {
@@ -14,7 +14,7 @@ namespace ZenithDataLib.Models
         public DateTime EventFromDateAndTime { get; set; }
         public DateTime EventToDateAndTime { get; set; }
         public string EnteredByUsername { get; set; }
-        
+
         public int ActivityCategoryId { get; set; }
         public ActivityCategory ActivityCategory { get; set; }
 

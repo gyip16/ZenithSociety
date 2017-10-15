@@ -4,8 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZenithDataLib;
 
-namespace ZenithDataLib.Models
+namespace ZenithDataLib
+
 {
     public class ActivityCategory
     {

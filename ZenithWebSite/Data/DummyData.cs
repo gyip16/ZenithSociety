@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ZenithDataLib.Models;
+using ZenithDataLib;
 
 namespace ZenithWebSite.Data
 {
@@ -81,7 +81,7 @@ namespace ZenithWebSite.Data
             return ActivityCategories;
         }
 
-        public static List<Event> getEvents(ZenithDataLib.Models.ApplicationDbContext context)
+        public static List<Event> getEvents(ZenithDataLib.ApplicationDbContext context)
         {
             List<Event> events = new List<Event>()
             {
