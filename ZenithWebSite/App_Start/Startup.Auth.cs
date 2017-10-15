@@ -7,6 +7,7 @@ using Microsoft.Owin.Security.Google;
 using Owin;
 using ZenithWebSite.Models;
 using ZenithWebSite;
+using ZenithDataLib.Models;
 
 namespace ZenithWebSite
 {
