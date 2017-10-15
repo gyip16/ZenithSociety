@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -15,20 +16,20 @@ namespace ZenithWebSite.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Events
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            var events = db.Events;
-            return View(events.ToList());
+            var events = db.Events.Include(a => a.ActivityCategory);
+            return View(await events.ToListAsync());
         }
 
         // GET: Events/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.Events.Find(id);
+            Event @event = await db.Events.FindAsync(id);
             if (@event == null)
             {
                 return HttpNotFound();
@@ -48,12 +49,12 @@ namespace ZenithWebSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EventId,EventFromDateAndTime,EventToDateAndTime,EnteredByUsername,ActivityCategoryId,CreationDate,IsActive")] Event @event)
+        public async Task<ActionResult> Create([Bind(Include = "EventId,EventFromDateAndTime,EventToDateAndTime,EnteredByUsername,ActivityCategoryId,CreationDate,IsActive")] Event @event)
         {
             if (ModelState.IsValid)
             {
                 db.Events.Add(@event);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -62,13 +63,13 @@ namespace ZenithWebSite.Controllers
         }
 
         // GET: Events/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.Events.Find(id);
+            Event @event = await db.Events.FindAsync(id);
             if (@event == null)
             {
                 return HttpNotFound();
@@ -82,12 +83,12 @@ namespace ZenithWebSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EventId,EventFromDateAndTime,EventToDateAndTime,EnteredByUsername,ActivityCategoryId,CreationDate,IsActive")] Event @event)
+        public async Task<ActionResult> Edit([Bind(Include = "EventId,EventFromDateAndTime,EventToDateAndTime,EnteredByUsername,ActivityCategoryId,CreationDate,IsActive")] Event @event)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(@event).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             ViewBag.ActivityCategoryId = new SelectList(db.ActivityCategories, "ActivityCategoryId", "ActivityDescription", @event.ActivityCategoryId);
@@ -95,13 +96,13 @@ namespace ZenithWebSite.Controllers
         }
 
         // GET: Events/Delete/5
-        public ActionResult Delete(int? id)
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.Events.Find(id);
+            Event @event = await db.Events.FindAsync(id);
             if (@event == null)
             {
                 return HttpNotFound();
@@ -112,11 +113,11 @@ namespace ZenithWebSite.Controllers
         // POST: Events/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Event @event = db.Events.Find(id);
+            Event @event = await db.Events.FindAsync(id);
             db.Events.Remove(@event);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
