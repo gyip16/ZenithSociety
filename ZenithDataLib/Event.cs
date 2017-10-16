@@ -15,8 +15,12 @@ namespace ZenithDataLib
         [DisplayName("Event Start")]
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd H:mm:ss tt}", ApplyFormatInEditMode = true)]
+        [Required(ErrorMessage = "Event Start Time is Required")]
         public DateTime EventFromDateAndTime { get; set; }
         [DisplayName("Event End")]
+        [Required(ErrorMessage = "Event End Time is Required")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd H:mm:ss tt}", ApplyFormatInEditMode = true)]
         public DateTime EventToDateAndTime { get; set; }
         [DisplayName("Created by")]
         public string EnteredByUsername { get; set; }
@@ -27,6 +31,7 @@ namespace ZenithDataLib
         public ActivityCategory ActivityCategory { get; set; }
 
         [DisplayName("Created on")]
+        [DataType(DataType.DateTime)]
         public DateTime CreationDate { get; set; }
         [DisplayName("Is Active")]
         public bool IsActive { get; set; }
