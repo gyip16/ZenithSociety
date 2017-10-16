@@ -1,5 +1,8 @@
-﻿using Microsoft.Owin;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin;
 using Owin;
+using ZenithDataLib;
 
 [assembly: OwinStartupAttribute(typeof(ZenithWebSite.Startup))]
 namespace ZenithWebSite
@@ -9,6 +12,8 @@ namespace ZenithWebSite
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            //createRolesandUsers();
         }
+
     }
 }
