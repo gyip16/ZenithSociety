@@ -212,6 +212,10 @@
     <Compile Include="Migrations\ZenithSociety\201710150611208_InitialCreate.Designer.cs">
       <DependentUpon>201710150611208_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ZenithSociety\201710160319139_Model updates.cs" />
+    <Compile Include="Migrations\ZenithSociety\201710160319139_Model updates.Designer.cs">
+      <DependentUpon>201710160319139_Model updates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ZenithSociety\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -314,6 +318,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\ZenithSociety\201710150611208_InitialCreate.resx">
       <DependentUpon>201710150611208_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ZenithSociety\201710160319139_Model updates.resx">
+      <DependentUpon>201710160319139_Model updates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

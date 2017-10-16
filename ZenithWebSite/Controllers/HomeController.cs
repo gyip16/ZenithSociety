@@ -15,7 +15,7 @@ namespace ZenithWebSite.Controllers
 
         public ActionResult Index()
         {
-            DateTime today = DateTime.Now.AddDays(6);
+            DateTime today = DateTime.Now;
             int currentDayOfWeek = (int)today.DayOfWeek;
             // If we started on Sunday, we should actually have gone *back*
             // 6 days instead of forward 1...
