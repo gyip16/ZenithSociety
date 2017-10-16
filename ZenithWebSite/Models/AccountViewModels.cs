@@ -7,7 +7,7 @@ namespace ZenithWebSite.Models
     {
         [Required]
         [Display(Name = "Email")]
-        public string Email { get; set; }
+        public string Email{ get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -49,9 +49,8 @@ namespace ZenithWebSite.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Username")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +63,19 @@ namespace ZenithWebSite.Models
 
     public class RegisterViewModel
     {
+
+        [Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [Display(Name = "Username")]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
