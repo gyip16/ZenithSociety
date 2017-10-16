@@ -11,6 +11,7 @@ using ZenithDataLib;
 
 namespace ZenithWebSite.Controllers
 {
+    [Authorize(Roles="Admin")]
     public class EventsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -41,6 +42,8 @@ namespace ZenithWebSite.Controllers
         public ActionResult Create()
         {
             ViewBag.ActivityCategoryId = new SelectList(db.ActivityCategories, "ActivityCategoryId", "ActivityDescription");
+            var loggedInUser = User.Identity.Name;
+            ViewBag.userid = loggedInUser;
             return View();
         }
 

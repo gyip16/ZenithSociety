@@ -11,6 +11,7 @@ using ZenithDataLib;
 
 namespace ZenithWebSite.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ActivityCategoriesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
