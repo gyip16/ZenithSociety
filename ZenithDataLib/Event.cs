@@ -13,6 +13,8 @@ namespace ZenithDataLib
         [Key]
         public int EventId { get; set; }
         [DisplayName("Event Start")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd H:mm:ss tt}", ApplyFormatInEditMode = true)]
         public DateTime EventFromDateAndTime { get; set; }
         [DisplayName("Event End")]
         public DateTime EventToDateAndTime { get; set; }
