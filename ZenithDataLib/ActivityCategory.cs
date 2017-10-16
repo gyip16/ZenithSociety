@@ -15,8 +15,10 @@ namespace ZenithDataLib
         [Key]
         public int ActivityCategoryId { get; set; }
         [DisplayName("Activity Description")]
+        [Required(ErrorMessage = "Activity Description Required")]
         public string ActivityDescription { get; set; }
         [DisplayName("Created on")]
+        [DataType(DataType.DateTime)]
         public DateTime CreationDate { get; set; }
 
         public List<Event> Events { get; set; }
