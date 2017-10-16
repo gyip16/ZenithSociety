@@ -34,6 +34,9 @@ namespace ZenithWebSite.Migrations.ZenithSociety
 
             context.Events.AddOrUpdate(
                 e => e.EventId, DummyData.getEvents(context).ToArray());
+
+            //create users
+            DummyData.createRolesandUsers();
         }
     }
 }
